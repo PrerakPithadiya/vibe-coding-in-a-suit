@@ -14,6 +14,10 @@
           <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
           <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
         </filter>
+        
+        <clipPath id="swipe-clip" clipPathUnits="objectBoundingBox">
+          <path d="M 0.02,0.08 C 0.2,0.01 0.4,0.12 0.6,0.03 C 0.8,0.09 0.9,0.02 0.98,0.07 C 0.99,0.3 0.97,0.6 0.99,0.93 C 0.8,0.88 0.6,0.98 0.4,0.91 C 0.2,0.97 0.1,0.89 0.01,0.94 C 0.03,0.6 0.01,0.3 0.02,0.08 Z" />
+        </clipPath>
       </defs>
     </svg>
 
@@ -409,84 +413,174 @@ fn main() {
       </section>
 
       <!-- Slide 4: Here is what no one is admitting -->
-      <section id="slide-4" class="slide" aria-label="Admitting Slide">
-        <!-- Left Panel: Blazer illustration -->
-        <div class="panel-left grid-cream slide-4-left">
-          <div class="blazer-wrapper reveal-el stagger-1">
-            <svg viewBox="0 0 200 240" class="blazer-svg" fill="none">
-              <path d="M 60,35 L 85,110 L 100,80 L 115,110 L 140,35" stroke="var(--color-ink-black)" stroke-width="2" stroke-linejoin="round" />
-              <path d="M 60,35 C 35,40 25,60 25,95 L 25,210 C 25,210 65,225 100,225 C 135,225 175,210 175,210 L 175,95 C 175,60 165,40 140,35" stroke="var(--color-ink-black)" stroke-width="2" stroke-linejoin="round" />
-              <path d="M 100,80 L 100,225" stroke="var(--color-ink-black)" stroke-width="2" />
-              <path d="M 40,150 L 70,150" stroke="var(--color-ink-black)" stroke-width="2" />
-              <path d="M 130,150 L 160,150" stroke="var(--color-ink-black)" stroke-width="2" />
-              <path d="M 45,90 L 65,90" stroke="var(--color-ink-black)" stroke-width="2" />
-              <path d="M 85,35 L 100,60 L 115,35" stroke="var(--color-ink-black)" stroke-width="1.5" />
-              <path d="M 96,60 L 104,60 L 108,100 L 100,110 L 92,100 Z" fill="var(--color-ink-black)" />
-              
-              <path d="M 10,70 Q 100,110 190,120" class="marker-stroke stroke-orange arrow-path" style="animation-delay: 0.5s;" />
-              <path d="M 30,170 Q 100,130 170,80" class="marker-stroke stroke-gold arrow-path" style="animation-delay: 0.7s;" />
-              <path d="M 75,30 Q 100,125 125,210" class="marker-stroke stroke-orange arrow-path" style="animation-delay: 0.9s;" />
-            </svg>
-          </div>
-        </div>
-        
-        <div class="vertical-divider-full"></div>
-        
-        <!-- Right Panel: Admitting message and 3 icons -->
-        <div class="panel-right grid-white blueprint-grid slide-4-right">
-          <div class="slide-4-content">
-            <h1 class="slide-4-statement reveal-el stagger-1">
-              "Here is what no one is admitting."
-            </h1>
-            <p class="slide-4-desc reveal-el stagger-2">
-              Agentic coding is the exact same idea, just worded in a more engineery way.
-            </p>
+      <section id="slide-4" class="slide slide-4 graph-paper-grid" aria-label="Here is what no one is admitting">
+        <div class="slide-4-container">
+          <!-- Top headline -->
+          <h1 class="slide-4-headline reveal-el">Here is what no one is admitting.</h1>
+          
+          <div class="slide-4-layout">
+            <!-- Left Column: Blazer Illustration -->
+            <div class="slide-4-left-col">
+              <div class="blazer-wrapper reveal-el stagger-1">
+                <svg viewBox="0 0 500 550" class="blazer-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- The Blazer Jacket Outline -->
+                  <g class="blazer-outline" stroke="var(--color-slate-blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Left Shoulder & Sleeve Outer -->
+                    <path d="M 210,100 L 140,130 L 135,410 M 135,410 L 165,410 M 165,410 L 175,230" />
+                    <!-- Right Shoulder & Sleeve Outer -->
+                    <path d="M 290,100 L 360,130 L 365,410 M 365,410 L 335,410 M 335,410 L 325,230" />
+                    
+                    <!-- Left Side Body & Hem -->
+                    <path d="M 175,230 L 170,440 C 170,440 210,455 250,455" />
+                    <!-- Right Side Body & Hem -->
+                    <path d="M 325,230 L 330,440 C 330,440 290,455 250,455" />
+                    
+                    <!-- Neckline back -->
+                    <path d="M 210,100 C 210,100 250,110 290,100" />
+                    
+                    <!-- Lapels -->
+                    <path d="M 210,100 L 180,145 L 195,155 L 250,260" />
+                    <path d="M 290,100 L 320,145 L 305,155 L 250,260" />
+                    
+                    <!-- Inner V-neck and fold line -->
+                    <path d="M 210,100 C 210,100 230,190 250,260" />
+                    <path d="M 290,100 C 290,100 270,190 250,260" />
+                    
+                    <!-- Center seam -->
+                    <path d="M 250,260 L 250,455" />
+                    
+                    <!-- Buttons -->
+                    <circle cx="250" cy="285" r="4.5" fill="none" stroke="var(--color-slate-blue)" stroke-width="2.5" />
+                    <circle cx="250" cy="325" r="4.5" fill="none" stroke="var(--color-slate-blue)" stroke-width="2.5" />
+                    
+                    <!-- Left Pocket Flap -->
+                    <path d="M 175,325 L 220,325 L 220,340 L 175,340 Z" />
+                    <!-- Right Pocket Flap -->
+                    <path d="M 325,325 L 280,325 L 280,340 L 325,340 Z" />
+                    
+                    <!-- Breast Pocket (Moved to right chest and designed horizontally matching reference slide) -->
+                    <path d="M 282,206 L 317,203" />
+                  </g>
+                  
+                  <!-- Layered Marker Brush Strokes (Offset Double Strokes) -->
+                  <!-- 1. Left sleeve chevron (<) designed with a sharp center vertex instead of a smooth circle arc -->
+                  <g class="brush-stroke brush-stroke-left reveal-el">
+                    <!-- Thicker Rust-orange stroke -->
+                    <path d="M 165,190 Q 135,215 95,245 Q 135,275 165,300" class="marker-path marker-thick" pathLength="100" />
+                    <!-- Thinner Tan-gold stroke offset slightly -->
+                    <path d="M 160,195 Q 130,220 90,250 Q 130,280 160,305" class="marker-path marker-thin" pathLength="100" />
+                  </g>
+                  
+                  <!-- 2. Middle long diagonal loop -->
+                  <g class="brush-stroke brush-stroke-diag reveal-el">
+                    <!-- Thicker Rust-orange stroke -->
+                    <path d="M 302,158 C 275,275 235,395 235,425 C 235,455 265,495 315,485 C 365,475 390,430 372,370" class="marker-path marker-thick" pathLength="100" />
+                    <!-- Thinner Tan-gold stroke offset slightly -->
+                    <path d="M 297,162 C 270,279 230,399 230,429 C 230,459 260,499 310,489 C 360,479 385,434 367,374" class="marker-path marker-thin" pathLength="100" />
+                  </g>
+                  
+                  <!-- 3. Right sleeve chevron (>) designed with a sharp center vertex instead of a smooth circle arc -->
+                  <g class="brush-stroke brush-stroke-right reveal-el">
+                    <!-- Thicker Rust-orange stroke -->
+                    <path d="M 335,190 Q 365,215 405,245 Q 365,275 335,300" class="marker-path marker-thick" pathLength="100" />
+                    <!-- Thinner Tan-gold stroke offset slightly -->
+                    <path d="M 340,195 Q 370,220 410,250 Q 370,280 340,305" class="marker-path marker-thin" pathLength="100" />
+                  </g>
+                </svg>
+              </div>
+            </div>
             
-            <div class="admit-row reveal-el stagger-3">
-              <div class="admit-item">
-                <div class="admit-icon-wrapper">
-                  <svg viewBox="0 0 24 24" class="admit-icon" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-                  </svg>
-                </div>
-                <p class="admit-text">A model writes the code.</p>
-              </div>
+            <!-- Right Column: Statement & Icons -->
+            <div class="slide-4-right-col">
+              <h2 class="slide-4-statement reveal-el">
+                Agentic coding is the exact same idea, just worded in a more engineery way.
+              </h2>
               
-              <div class="admit-item">
-                <div class="admit-icon-wrapper">
-                  <svg viewBox="0 0 24 24" class="admit-icon" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10" />
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M12 2v7M12 15v7M2 12h7M15 12h7" />
-                  </svg>
+              <div class="admit-row">
+                <!-- Column 1: Gear -->
+                <div class="admit-item reveal-el stagger-1">
+                  <div class="admit-icon-wrapper" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none" stroke="var(--color-slate-blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <!-- Outer Gear Outline - proper 8-teeth gear shape -->
+                      <path d="M32 6 l3 7 a18 18 0 015 2 l7-5 5 5-5 7 a18 18 0 012 5 l7 3 v6 l-7 3 a18 18 0 01-2 5 l5 7-5 5-7-5 a18 18 0 01-5 2 l-3 7 h-6 l-3-7 a18 18 0 01-5-2 l-7 5-5-5 5-7 a18 18 0 01-2-5 l-7-3 v-6 l7-3 a18 18 0 012-5 l-5-7 5-5 7 5 a18 18 0 015-2 l3-7 z" />
+                      <!-- Center Hub -->
+                      <circle cx="32" cy="32" r="8" />
+                      <!-- Orange Accent Arc inside the gear -->
+                      <path d="M 32,20 A 12,12 0 0,1 44,32" stroke="var(--color-rust-orange)" stroke-width="3" />
+                    </svg>
+                  </div>
+                  <p class="admit-text">A model writes the code.</p>
                 </div>
-                <p class="admit-text">You steer a bit.</p>
-              </div>
-              
-              <div class="admit-item">
-                <div class="admit-icon-wrapper">
-                  <svg viewBox="0 0 24 24" class="admit-icon" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61M2 2l20 20" />
-                  </svg>
+                
+                <!-- Column 2: Steering Wheel -->
+                <div class="admit-item reveal-el stagger-2">
+                  <div class="admit-icon-wrapper" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none" stroke="var(--color-slate-blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <!-- Double rim steering wheel -->
+                      <circle cx="32" cy="32" r="25" />
+                      <circle cx="32" cy="32" r="21" />
+                      <!-- Hub -->
+                      <circle cx="32" cy="32" r="5" />
+                      <!-- Spokes -->
+                      <path d="M 7,32 H 27" />
+                      <path d="M 37,32 H 57" />
+                      <path d="M 32,37 V 57" />
+                      <!-- Grip texture indicators (dashed circular guide) -->
+                      <path d="M 17,25 A 18,18 0 0,1 47,25" stroke-dasharray="3 4" stroke-width="1.5" />
+                    </svg>
+                  </div>
+                  <p class="admit-text">You steer a bit.</p>
                 </div>
-                <p class="admit-text">You merge a lot of it without reading it.</p>
+                
+                <!-- Column 3: Eye with slash -->
+                <div class="admit-item reveal-el stagger-3">
+                  <div class="admit-icon-wrapper" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none" stroke="var(--color-slate-blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <!-- Almond eye shape -->
+                      <path d="M 8,32 C 16,16 48,16 56,32" />
+                      <path d="M 8,32 C 16,48 48,48 56,32" />
+                      <!-- Iris and Pupil -->
+                      <circle cx="32" cy="32" r="10" />
+                      <circle cx="32" cy="32" r="4" fill="var(--color-slate-blue)" />
+                      <!-- Orange diagonal slash line -->
+                      <path d="M 14,50 L 50,14" stroke="var(--color-rust-orange)" stroke-width="3.5" />
+                    </svg>
+                  </div>
+                  <p class="admit-text">You merge a lot of it without reading it.</p>
+                </div>
               </div>
             </div>
           </div>
+          
         </div>
-        
       </section>
 
       <!-- Slide 5: Yes, technical differences exist. Let's not pretend they don't. -->
-      <section id="slide-5" class="slide slide-5" aria-label="Comparison Table Slide">
-        <div class="slide-content table-container grid-white blueprint-grid">
+      <section id="slide-5" class="slide slide-5 graph-paper-grid" aria-label="Comparison Table Slide">
+        <!-- Left edge decorations bleeding off screen -->
+        <div class="slide-decorations">
+          <!-- Double-stroke Z zigzag near row 1 -->
+          <div class="decor-zigzag brush-stroke reveal-el stagger-3">
+            <svg viewBox="0 0 100 120" class="decor-svg" preserveAspectRatio="none">
+              <path d="M -15,15 L 75,45 L 5,75 L 85,105" class="marker-path marker-thick" pathLength="100" />
+              <path d="M -13,20 L 77,50 L 7,80 L 87,110" class="marker-path marker-thin" pathLength="100" />
+            </svg>
+          </div>
+          <!-- Single vertical tan-gold squiggle near row 2 -->
+          <div class="decor-squiggle brush-stroke reveal-el stagger-4">
+            <svg viewBox="0 0 60 160" class="decor-svg" preserveAspectRatio="none">
+              <path d="M -10,10 Q 55,45 -2,80 T 45,150" class="marker-path marker-thin-gold" pathLength="100" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="slide-content table-container">
           <h1 class="font-title slide-5-title reveal-el stagger-1">
             Yes, technical differences exist. Let's not pretend they don't.
           </h1>
           
           <div class="table-wrapper reveal-el stagger-2">
-            <table class="comparison-table">
+            <table class="comparison-table" aria-label="Comparison of vibe coding versus agentic coding">
               <thead>
                 <tr>
                   <th class="col-vibe">VIBE CODING</th>
@@ -496,44 +590,59 @@ fn main() {
               <tbody>
                 <tr>
                   <td class="cell-vibe">
-                    The original Karpathy version.<br>
-                    <span class="hand-highlight">
-                      Loosey-goosey.
-                      <svg class="hand-underline" viewBox="0 0 140 12" preserveAspectRatio="none">
-                        <path d="M 5,6 Q 70,10 135,4" class="arrow-path" />
-                      </svg>
-                    </span>
+                    <div class="highlighter-swipe"></div>
+                    <div class="cell-content">
+                      The original Karpathy version.
+                      <span class="hand-highlight">
+                        Loosey-goosey.
+                        <svg class="hand-underline" viewBox="0 0 100 12" preserveAspectRatio="none">
+                          <path d="M 2,7 C 25,10 50,4 75,8 C 88,10 95,6 98,7" class="arrow-path underline-row-1" />
+                        </svg>
+                      </span>
+                    </div>
                   </td>
-                  <td class="cell-agentic">The Engineery version. Structured.</td>
+                  <td class="cell-agentic">
+                    <div class="cell-content">The Engineery version. Structured.</div>
+                  </td>
                 </tr>
                 <tr>
                   <td class="cell-vibe">
-                    <span class="hand-highlight">
-                      Reactive.
-                      <svg class="hand-underline" viewBox="0 0 80 12" preserveAspectRatio="none">
-                        <path d="M 3,5 Q 40,8 77,4" class="arrow-path" />
-                      </svg>
-                    </span>
-                    Prompt → Look at screen → Prompt again.
+                    <div class="highlighter-swipe"></div>
+                    <div class="cell-content">
+                      <span class="hand-highlight">
+                        Reactive.
+                        <svg class="hand-underline" viewBox="0 0 100 12" preserveAspectRatio="none">
+                          <path d="M 3,8 C 30,5 60,10 80,6 C 90,4 95,8 98,7" class="arrow-path underline-row-2" />
+                        </svg>
+                      </span>
+                      Prompt → Look at screen → Prompt again.
+                    </div>
                   </td>
-                  <td class="cell-agentic">Proactive. Planning step → Autonomy.</td>
+                  <td class="cell-agentic">
+                    <div class="cell-content">Proactive. Planning step → Autonomy.</div>
+                  </td>
                 </tr>
                 <tr>
                   <td class="cell-vibe">
-                    <span class="hand-highlight">
-                      Edits one file, maybe two.
-                      <svg class="hand-underline" viewBox="0 0 220 12" preserveAspectRatio="none">
-                        <path d="M 5,7 Q 110,10 215,4" class="arrow-path" />
-                      </svg>
-                    </span>
+                    <div class="highlighter-swipe"></div>
+                    <div class="cell-content">
+                      Edits one file, 
+                      <span class="hand-highlight">
+                        maybe two.
+                        <svg class="hand-underline" viewBox="0 0 100 12" preserveAspectRatio="none">
+                          <path d="M 2,6 C 30,9 60,4 85,8 C 92,9 96,6 98,7" class="arrow-path underline-row-3" />
+                        </svg>
+                      </span>
+                    </div>
                   </td>
-                  <td class="cell-agentic">Touches eight files exactly the way you like it.</td>
+                  <td class="cell-agentic">
+                    <div class="cell-content">Touches eight files exactly the way you like it.</div>
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-        
       </section>
 
       <!-- Slide 6: The reality behind the rebranding. -->
