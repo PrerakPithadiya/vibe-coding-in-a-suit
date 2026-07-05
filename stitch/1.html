@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agentic Coding vs Vibe Coding</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Serif for headline, Monospace for code, Sans for labels -->
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&amp;family=Fira+Code:wght@400;500&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'vibe-cream': '#e9d6a3',
+            'agentic-grid': '#f0f4f8',
+            'blueprint-blue': '#4a5568',
+            'blueprint-line': '#cbd5e0',
+          },
+          fontFamily: {
+            serif: ['Libre Baskerville', 'serif'],
+            mono: ['Fira Code', 'monospace'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layouts">
+    /* Grid background for the right side */
+    .grid-pattern {
+      background-image: 
+        linear-gradient(to right, #cbd5e0 1px, transparent 1px),
+        linear-gradient(to bottom, #cbd5e0 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    
+    /* Paper texture for the left side */
+    .paper-texture {
+      background-color: #e9d6a3;
+      background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    }
+
+    /* Sketchy arrow effect simulation */
+    .sketchy-arrow {
+      position: absolute;
+      stroke: #8b4513;
+      stroke-width: 2;
+      fill: none;
+      filter: blur(0.5px);
+    }
+
+    .main-headline {
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      z-index: 50;
+    }
+
+    .blueprint-shadow {
+      box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 overflow-hidden font-sans">
+<!-- BEGIN: MainContainer -->
+<main class="relative min-h-screen flex flex-col md:flex-row w-full overflow-hidden">
+<!-- BEGIN: LeftColumn - Vibe Coding Section -->
+<section class="relative w-full md:w-1/2 paper-texture p-8 flex flex-col justify-start" data-purpose="vibe-coding-side">
+<!-- Python Snippet -->
+<div class="absolute top-10 left-10 opacity-80" data-purpose="code-snippet">
+<pre class="font-mono text-sm text-gray-800">// vibe_check.py
+def generate_code(prompt):
+  # it feels right
+  response = model.generate(prompt)
+  return response
+
+# maybe this works?
+if vibe &gt; threshold:
+  deploy()
+        </pre>
+</div>
+<!-- JS Snippet -->
+<div class="absolute top-10 right-10 text-right opacity-80" data-purpose="code-snippet">
+<pre class="font-mono text-sm text-gray-800">// another_vibe.js
+const getVibe = () =&gt; {
+  let mood = 'chaotic';
+  // trust the process
+  if (Math.random() &gt; 0.5) mood
+    return mood;
+};
+
+console.log('Current Vibe:', getVibe());
+        </pre>
+</div>
+<!-- Rust Snippet -->
+<div class="absolute bottom-10 left-10 opacity-80" data-purpose="code-snippet">
+<pre class="font-mono text-sm text-gray-800">// rust-vibe.rs
+fn main() {
+  // net mut vibe
+  let mut vibe: String = "unpredictable".to_string();
+  // just add some warmth
+  vibe.push_str(" but intuitive");
+  println!("The vibe is {}", vibe);
+}
+        </pre>
+</div>
+<!-- Decorative SVG Arrows -->
+<svg class="absolute top-1/4 left-1/4 w-32 h-32 opacity-40 pointer-events-none" viewbox="0 0 100 100">
+<path d="M 10 10 Q 50 10 50 50" fill="none" marker-end="url(#arrowhead)" stroke="#8b4513" stroke-linecap="round" stroke-width="2"></path>
+<defs>
+<marker id="arrowhead" markerheight="7" markerwidth="10" orient="auto" refx="0" refy="3.5">
+<polygon fill="#8b4513" points="0 0, 10 3.5, 0 7"></polygon>
+</marker>
+</defs>
+</svg>
+</section>
+<!-- END: LeftColumn -->
+<!-- BEGIN: RightColumn - Agentic Coding Section -->
+<section class="relative w-full md:w-1/2 bg-agentic-grid grid-pattern p-8 border-l border-gray-300" data-purpose="agentic-coding-side">
+<!-- Flow Chart Section -->
+<div class="mt-12 flex flex-col items-center" data-purpose="technical-flowchart">
+<div class="bg-white border-2 border-blueprint-blue px-6 py-2 blueprint-shadow text-xs font-bold uppercase tracking-wider mb-8">
+          INPUT_PROCESSOR
+        </div>
+<div class="relative flex flex-col items-center">
+<div class="w-px h-8 bg-blueprint-blue"></div>
+<div class="bg-white border-2 border-blueprint-blue p-4 blueprint-shadow flex flex-col items-center">
+<span class="text-xs font-bold text-blueprint-blue">DECISION_ENGINE</span>
+<span class="text-[10px] text-gray-500 italic">Is agentic?</span>
+</div>
+<div class="flex gap-16 mt-8 relative">
+<!-- Left Path -->
+<div class="flex flex-col items-center">
+<div class="absolute top-0 left-1/2 -translate-x-full w-24 h-px bg-blueprint-blue -mt-8"></div>
+<div class="w-px h-8 bg-blueprint-blue -mt-8"></div>
+<div class="bg-blueprint-blue text-white text-[10px] p-1 w-full text-center font-bold">EXECUTE_PLAN</div>
+<div class="bg-white border-x-2 border-b-2 border-blueprint-blue p-2 text-[9px]">
+                &gt; Strictly follow steps
+              </div>
+</div>
+<!-- Right Path -->
+<div class="flex flex-col items-center">
+<div class="absolute top-0 right-1/2 translate-x-full w-24 h-px bg-blueprint-blue -mt-8"></div>
+<div class="w-px h-8 bg-blueprint-blue -mt-8"></div>
+<div class="bg-slate-400 text-white text-[10px] p-1 w-full text-center font-bold">REVISE_STRATEGY</div>
+<div class="bg-white border-x-2 border-b-2 border-blueprint-blue p-2 text-[9px]">
+                &gt; Adjust based on constraints
+              </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Data Table and Chart Container -->
+<div class="absolute bottom-12 right-12 flex gap-8 items-end scale-90 origin-bottom-right">
+<!-- Table -->
+<div class="bg-white blueprint-shadow border border-gray-400 text-[10px]" data-purpose="status-table">
+<table class="w-64 border-collapse">
+<thead>
+<tr class="bg-blueprint-blue text-white">
+<th class="p-1 border border-gray-400">STAGE</th>
+<th class="p-1 border border-gray-400">STATUS</th>
+<th class="p-1 border border-gray-400">METRIC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-1 border border-gray-400">[1] Initialization</td>
+<td class="p-1 border border-gray-400 text-center font-bold">COMPLETE</td>
+<td class="p-1 border border-gray-400 text-center">100%</td>
+</tr>
+<tr>
+<td class="p-1 border border-gray-400">[2] Optimization</td>
+<td class="p-1 border border-gray-400 text-center text-gray-500">PENDING</td>
+<td class="p-1 border border-gray-400 text-center">N/A</td>
+</tr>
+<tr class="bg-gray-50">
+<td class="p-1 border border-gray-400">... ...</td>
+<td class="p-1 border border-gray-400 text-center"></td>
+<td class="p-1 border border-gray-400 text-center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Bar Chart -->
+<div class="flex flex-col items-center" data-purpose="performance-chart">
+<div class="flex items-end gap-2 h-32 border-l border-b border-gray-800 pb-px pl-px relative">
+<!-- Y-Axis Labels -->
+<div class="absolute -left-8 bottom-0 flex flex-col justify-between h-full text-[9px] text-gray-500">
+<span>0%</span>
+<span>25%</span>
+<span>50%</span>
+<span>75%</span>
+<span>100%</span>
+<span>160%</span>
+</div>
+<!-- Bars -->
+<div class="flex flex-col items-center">
+<span class="text-[9px] mb-1">92%</span>
+<div class="w-8 bg-slate-400 border border-slate-600" style="height: 57%;"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[9px] mb-1">98%</span>
+<div class="w-8 bg-slate-500 border border-slate-700" style="height: 61%;"></div>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[9px] mb-1">85%</span>
+<div class="w-8 bg-slate-300 border border-slate-500" style="height: 52%;"></div>
+</div>
+</div>
+<div class="flex justify-around w-full mt-1 text-[9px] font-bold text-gray-600 pl-4">
+<span>Efficiency</span>
+<span>Accuracy</span>
+<span>Scalability</span>
+</div>
+</div>
+</div>
+<!-- Plus Crosshairs Decorative -->
+<div class="absolute top-5 left-5 text-gray-400">+</div>
+<div class="absolute top-5 right-5 text-gray-400">+</div>
+<div class="absolute bottom-5 left-5 text-gray-400">+</div>
+<div class="absolute bottom-5 right-5 text-gray-400">+</div>
+</section>
+<!-- END: RightColumn -->
+<!-- BEGIN: CentralTextOverlay -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl px-4 pointer-events-none text-center">
+<h1 class="main-headline font-serif text-5xl md:text-7xl lg:text-8xl text-slate-900 drop-shadow-sm">
+        Agentic Coding Is Just Vibe Coding In A Suit
+      </h1>
+<p class="mt-8 text-xl md:text-3xl font-light text-slate-800 max-w-2xl mx-auto leading-relaxed">
+        The psychological reality behind AI development’s newest favorite buzzword.
+      </p>
+</div>
+<!-- END: CentralTextOverlay -->
+<!-- Footer Attribution -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-full text-center">
+<p class="text-gray-500 text-sm font-medium">Based on insights by Alex Dunlop</p>
+</div>
+
+</main>
+<!-- END: MainContainer -->
+</body></html>
